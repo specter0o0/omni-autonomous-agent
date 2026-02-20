@@ -13,7 +13,6 @@ Commands:
 import argparse
 import json
 import os
-import shutil
 import stat
 import sys
 from datetime import datetime, timedelta
@@ -161,12 +160,14 @@ def cmd_install() -> None:
         )
 
     dest = target_dir / "omni-autonomous-agent"
-    shutil.copy2(script, dest)
-    dest.chmod(dest.stat().st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+    if dest.exists() or dest.is_symlink():
+        dest.unlink()
+    dest.symlink_to(script)
+    script.chmod(script.stat().st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
     _header(f"{_c(GREEN, '✓')} Installed")
-    _row("From",  str(script))
-    _row("To",    str(dest))
+    _row("Source", str(script))
+    _row("Link",   str(dest))
     print()
     print(f"  Run {_c(BOLD, 'omni-autonomous-agent --status')} to verify.")
 
