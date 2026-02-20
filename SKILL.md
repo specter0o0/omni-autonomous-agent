@@ -125,8 +125,34 @@ significant time.
 
 ---
 
+## Sandbox
+
+You have a dedicated sandbox at `omni-autonomous-agent/omni-sandbox/`. This is your
+personal workspace for the entire session.
+
+**Do NOT work in the sandbox root.** Create a subfolder named after your task title:
+
+```
+omni-sandbox/my-task-name/
+```
+
+Everything happens inside that folder. Use it to:
+
+- 📝 Log your thoughts and reasoning continuously as you work
+- 📄 Draft your end-of-session report early and iterate on it throughout
+- 🧪 Run experiments, test ideas, create scripts to help you, and store intermediate outputs
+- 📌 Track your own progress and decisions
+...
+
+Go all-in. This space exists so you can think out loud, try things, fail fast, and
+iterate without restraint. A rich sandbox is a sign of good autonomous work — not
+clutter. Be creative, and resourceful. Use every tool at your disposal. Make your own tools.
+
+---
+
 ## Notes
 
 - When user uses this skill, 99% of the time they're away, so do not try to communicate with them, you must work with what you have, be creative, and go all-in!
 - To cancel a session mid-way (e.g. user returns early), run `omni-autonomous-agent --cancel`. Stop all work immediately and skip the end-of-session report. NOTE: do this only if user explicitly asks you for a report immediately.
 - Scope management is your responsibility. If the task is larger than the time budget, prioritize the highest-value work and note what you couldn't finish in your report.
+- **Use your sandbox** (see [Sandbox](#sandbox) section above) — it is not optional. Log, draft, experiment, and iterate there throughout the entire session.
