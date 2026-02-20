@@ -7,7 +7,7 @@ Lets an AI agent work non-stop for a fixed duration, then report back, no interr
 ## Setup
 
 ```bash
-python3 helper.py --install
+python3 main.py --install
 ```
 
 Installs `omni-autonomous-agent` to `~/.local/bin`. Run once, use anywhere.

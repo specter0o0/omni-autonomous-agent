@@ -13,7 +13,7 @@ interruptions, then report back.
 ## One-time install
 
 ```bash
-python3 helper.py --install
+python3 main.py --install
 ```
 
 ## Activation (MANDATORY FIRST STEP)
